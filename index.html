@@ -31,7 +31,7 @@
     />
     <meta
       property="og:image"
-      content="https://lernmemo.com/public/images/social-share-image.jpg"
+      content="https://lernmemo.com/public/logo/logo-og.png"
     />
 
     <!-- Twitter Meta Tags -->
@@ -46,12 +46,16 @@
     />
     <meta
       name="twitter:image"
-      content="https://lernmemo.com/public/images/social-share-image.jpg"
+      content="https://lernmemo.com/public/logo/logo-twitter.png"
     />
 
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" href="public/logo/lernmemo-logo.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="public/logo/logo-apple.png"
+    />
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#2C3E50" />
@@ -62,9 +66,577 @@
       rel="stylesheet"
     />
     <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Add smooth scrolling behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* CSS variables with branding colors */
+      :root {
+        /* Color palette */
+        --color-primary: #2c3e50;
+        --color-primary-dark: #1a2a3a;
+        --color-secondary: #3498db;
+        --color-secondary-dark: #2980b9;
+        --color-accent: #ffc93c;
+        --color-accent-dark: #ffc93c;
+        --color-background: #ecf0f1;
+        --color-background-alt: #f9f9f9;
+        --color-text: #34495e;
+        --color-text-light: #7f8c8d;
+        --color-heading: #444;
+        --color-white: #ffffff;
+        --color-success: #2ecc71;
+        --color-error: #e74c3c;
+
+        /* Gradients */
+        --gradient-primary: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-secondary) 100%
+        );
+        --header-bg: linear-gradient(
+            rgba(44, 62, 80, 0.7),
+            rgba(44, 62, 80, 0.7)
+          ),
+          url("https://via.placeholder.com/1200x400");
+
+        /* Spacing */
+        --space-xs: 4px;
+        --space-sm: 8px;
+        --space-md: 12px;
+        --space-lg: 16px;
+        --space-xl: 20px;
+        --space-xxl: 24px;
+        --space-section: 50px;
+        --space-section-lg: 100px;
+
+        /* Border */
+        --border-radius-sm: 4px;
+        --border-radius-md: 5px;
+        --border-radius-lg: 8px;
+        --border-radius-xl: 10px;
+        --border-radius-full: 30px;
+        --border-radius-circle: 50%;
+        --border-width: 2px;
+
+        /* Shadows */
+        --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.05);
+        --shadow-xl: 0 6px 12px rgba(0, 0, 0, 0.1);
+        --shadow-xxl: 0 8px 20px rgba(0, 0, 0, 0.15);
+        --shadow-focus: 0 0 0 3px rgba(26, 188, 156, 0.2);
+
+        /* Typography */
+        --font-size-sm: 0.9rem;
+        --font-size-base: 1rem;
+        --font-size-md: 1.2rem;
+        --font-size-lg: 1.5rem;
+        --font-size-xl: 2rem;
+        --font-size-xxl: 2.2rem;
+        --font-size-huge: 2.5rem;
+
+        /* Animation */
+        --transition-speed: 0.3s;
+        --transition-fn: ease;
+
+        /* Component sizes */
+        --input-height: 46px;
+        --step-icon-size: 50px;
+        --image-height: 250px;
+      }
+
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--color-text);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: var(--space-xl);
+      }
+
+      header {
+        background: var(--header-bg) no-repeat center center/cover;
+        color: var(--color-white);
+        text-align: center;
+        padding: var(--space-section-lg) var(--space-xl);
+      }
+
+      header h1 {
+        font-size: var(--font-size-huge);
+        margin-bottom: var(--space-xl);
+      }
+
+      header p {
+        font-size: var(--font-size-md);
+        margin-bottom: var(--space-xl);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: var(--space-md) var(--space-xxl);
+        background: var(--color-primary);
+        color: var(--color-white);
+        text-decoration: none;
+        border-radius: var(--border-radius-md);
+        transition: background var(--transition-speed) var(--transition-fn),
+          transform var(--transition-speed) var(--transition-fn);
+        box-shadow: var(--shadow-md);
+        font-size: var(--font-size-base);
+      }
+
+      .btn:hover {
+        background-color: var(--color-accent-dark);
+        transform: translateY(calc(var(--space-xs) * -1));
+        box-shadow: var(--shadow-xl);
+      }
+
+      section {
+        padding: var(--space-section) 0;
+      }
+
+      /* Add a class for the section with alternate background */
+      .section-alternate {
+        background: var(--color-secondary);
+      }
+
+      .benefits {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xl);
+        justify-content: space-around;
+      }
+
+      .benefit {
+        flex: 1 1 300px;
+        background: var(--color-background);
+        padding: var(--space-xl);
+        border-radius: var(--border-radius-md);
+        box-shadow: var(--shadow-sm);
+        transition: transform var(--transition-speed) var(--transition-fn),
+          box-shadow var(--transition-speed) var(--transition-fn);
+      }
+
+      .benefit:hover {
+        transform: translateY(calc(var(--space-md) * -1));
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .benefit h2 {
+        margin-bottom: var(--space-sm);
+        font-size: var(--font-size-lg);
+        color: var(--color-primary);
+      }
+
+      .benefit p {
+        margin-bottom: var(--space-sm);
+      }
+
+      .benefit ul {
+        list-style-type: disc;
+        padding-left: var(--space-xl);
+      }
+
+      footer {
+        background: var(--color-text);
+        color: var(--color-white);
+        text-align: center;
+        padding: var(--space-xl) 0;
+      }
+
+      /* Form styles */
+      .text-center {
+        text-align: center;
+      }
+
+      /* Make the form layout responsive */
+      .waitlist-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: var(--space-xl) auto;
+        gap: var(--space-sm);
+      }
+
+      /* Improved input styling for better alignment */
+      .waitlist-form input[type="email"] {
+        border: var(--border-width) solid var(--color-secondary);
+        border-radius: var(--border-radius-sm);
+        padding: var(--space-sm) var(--space-lg);
+        width: 100%;
+        max-width: 400px;
+        font-size: var(--font-size-base);
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
+        outline: none;
+        transition: border-color var(--transition-speed),
+          box-shadow var(--transition-speed);
+        margin: 0;
+        height: var(--input-height);
+        box-sizing: border-box;
+      }
+
+      .waitlist-form input[type="email"]:focus {
+        border-color: var(--color-secondary-dark);
+        box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+      }
+
+      /* Ensure button has the same height as input */
+      .waitlist-form .btn {
+        height: var(--input-height);
+        padding: var(--space-sm) var(--space-xxl);
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Make form responsive */
+      @media (max-width: 600px) {
+        .waitlist-form {
+          flex-direction: column;
+        }
+
+        .waitlist-form input[type="email"] {
+          margin-bottom: var(--space-sm);
+          max-width: 100%;
+        }
+      }
+
+      /* Image Showcase Section */
+      .showcase {
+        padding: 3rem 0;
+        background-color: var(--color-background-alt);
+      }
+
+      .showcase-images {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: var(--space-xl);
+      }
+
+      .showcase-image {
+        flex: 1;
+        min-width: 250px;
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+        opacity: 0;
+        animation: fadeIn var(--transition-speed) forwards;
+      }
+
+      .image-1 {
+        animation-delay: 0s;
+      }
+
+      .image-2 {
+        animation-delay: 0.5s;
+      }
+
+      .image-3 {
+        animation-delay: 1s;
+      }
+
+      .showcase-image img {
+        width: 100%;
+        height: var(--image-height);
+        object-fit: cover;
+        transition: transform var(--transition-speed) var(--transition-fn);
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* How It Works Section */
+      .how-it-works {
+        padding: 4rem 0;
+        background-color: var(--color-white);
+      }
+
+      .how-it-works h2 {
+        margin-bottom: 3rem;
+        font-size: var(--font-size-xxl);
+        color: var(--color-heading);
+      }
+
+      .steps {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .step {
+        flex: 1;
+        min-width: 250px;
+        text-align: center;
+        padding: 2rem;
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-lg);
+        transition: transform var(--transition-speed) var(--transition-fn);
+      }
+
+      .step:hover {
+        transform: translateY(calc(var(--space-md) * -1));
+      }
+
+      .step h3 {
+        margin-bottom: var(--space-base);
+        color: var(--color-heading);
+      }
+
+      /* Waitlist Section */
+      #waitlist {
+        padding: 4rem 0;
+        background: var(--gradient-primary);
+        color: var(--color-white);
+      }
+
+      /* Hide Mailchimp badge if needed */
+      .optionalParent p {
+        display: none;
+      }
+
+      /* Enhanced Waitlist Form Styling */
+      .card {
+        background-color: var(--color-white);
+        border-radius: var(--border-radius-xl);
+        box-shadow: var(--shadow-xxl);
+        overflow: hidden;
+      }
+
+      .form-card {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+      }
+
+      .waitlist-form-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: left;
+      }
+
+      .form-label {
+        font-weight: bold;
+        color: var(--color-primary);
+        font-size: var(--font-size-base);
+      }
+
+      .form-input {
+        padding: var(--space-md) var(--space-lg);
+        border: var(--border-width) solid var(--color-secondary);
+        border-radius: var(--border-radius-md);
+        font-size: var(--font-size-base);
+        transition: all var(--transition-speed) var(--transition-fn);
+        outline: none;
+      }
+
+      .form-input:focus {
+        border-color: var(--color-accent);
+      }
+
+      .form-submit {
+        margin-top: var(--space-sm);
+      }
+
+      .btn-accent {
+        cursor: pointer;
+        border: none;
+        padding: var(--space-md) var(--space-xxl);
+        width: 100%;
+        font-size: var(--font-size-base);
+        font-weight: bold;
+        transition: all var(--transition-speed) var(--transition-fn);
+      }
+
+      .btn-accent:hover {
+        background-color: var(--color-accent-dark);
+        transform: none;
+        box-shadow: var(--shadow-xl);
+      }
+
+      .required {
+        color: var(--color-error);
+      }
+
+      #mce-responses .response {
+        padding: var(--space-sm);
+        margin-top: var(--space-sm);
+        border-radius: var(--border-radius-sm);
+        font-weight: 500;
+      }
+
+      #mce-error-response {
+        background-color: rgba(231, 76, 60, 0.1);
+        color: var(--color-error);
+      }
+
+      #mce-success-response {
+        background-color: rgba(46, 204, 113, 0.1);
+        color: var(--color-success);
+      }
+
+      /* Adjust responsive behavior */
+      @media (max-width: 768px) {
+        .form-card {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .showcase-images {
+          flex-direction: column;
+        }
+
+        .showcase-image {
+          margin-bottom: 1.5rem;
+        }
+
+        .showcase-image img {
+          height: auto;
+          max-height: 300px;
+        }
+
+        .waitlist-form {
+          flex-direction: column;
+        }
+
+        .waitlist-form input,
+        .waitlist-form button {
+          width: 100%;
+          margin-bottom: var(--space-base);
+          border-radius: var(--border-radius-full);
+        }
+      }
+
+      /* Updated Breadcrumb navigation styles to match site theme */
+      .breadcrumb-nav {
+        background-color: var(--color-primary);
+        padding: var(--space-sm) 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .breadcrumb {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .breadcrumb li {
+        display: inline-block;
+        margin-right: var(--space-lg);
+        font-size: var(--font-size-sm);
+      }
+
+      .breadcrumb li:after {
+        content: "•";
+        margin-left: var(--space-lg);
+        color: var(--color-accent);
+      }
+
+      .breadcrumb li:last-child:after {
+        content: "";
+        margin: 0;
+      }
+
+      .breadcrumb a {
+        color: var(--color-white);
+        text-decoration: none;
+        transition: color var(--transition-speed) var(--transition-fn);
+        font-weight: 500;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--color-accent);
+        text-decoration: none;
+      }
+
+      /* Make breadcrumbs responsive */
+      @media (max-width: 576px) {
+        .breadcrumb {
+          font-size: 14px;
+        }
+
+        .breadcrumb li {
+          margin-right: var(--space-sm);
+        }
+
+        .breadcrumb li:after {
+          margin-left: var(--space-sm);
+        }
+      }
+    </style>
   </head>
   <body>
+    <!-- Breadcrumb Navigation - Moved to top of page -->
+    <nav class="breadcrumb-nav">
+      <div class="container">
+        <ol
+          class="breadcrumb"
+          itemscope
+          itemtype="https://schema.org/BreadcrumbList"
+        >
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a href="#" itemprop="item"><span itemprop="name">Home</span></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a href="#how-it-works" itemprop="item"
+              ><span itemprop="name">How it Works</span></a
+            >
+            <meta itemprop="position" content="2" />
+          </li>
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a href="#waitlist" itemprop="item"
+              ><span itemprop="name">Waitlist</span></a
+            >
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+      </div>
+    </nav>
+
     <!-- Hero Section -->
     <header>
       <div class="container">
@@ -76,26 +648,6 @@
       </div>
     </header>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav">
-      <div class="container">
-        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="#" itemprop="item"><span itemprop="name">Home</span></a>
-            <meta itemprop="position" content="1" />
-          </li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="#how-it-works" itemprop="item"><span itemprop="name">How it Works</span></a>
-            <meta itemprop="position" content="2" />
-          </li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="#waitlist" itemprop="item"><span itemprop="name">Waitlist</span></a>
-            <meta itemprop="position" content="3" />
-          </li>
-        </ol>
-      </div>
-    </nav>
-
     <!-- How It Works Section - Add id attribute for direct linking -->
     <section id="how-it-works" class="how-it-works">
       <div class="container">
@@ -105,8 +657,10 @@
             <h3>Capture</h3>
             <div class="showcase-image image-1">
               <img
-                src="public/images/taking-photo.webp"
+                src="public/images/taking-photo.jpeg"
                 alt="Taking a photo of text"
+                width="1024"
+                height="1024"
               />
             </div>
             <p>Take a photo of text or record audio in your target language</p>
@@ -114,7 +668,12 @@
           <div class="step">
             <h3>Process</h3>
             <div class="showcase-image image-2">
-              <img src="public/images/ai.webp" alt="AI processing language" />
+              <img
+                src="public/images/ai.jpeg"
+                width="1024"
+                height="1024"
+                alt="AI processing language"
+              />
             </div>
             <p>Our AI instantly analyzes and extracts key learning material</p>
           </div>
@@ -122,8 +681,10 @@
             <h3>Learn</h3>
             <div class="showcase-image image-3">
               <img
-                src="public/images/man-learning.webp"
+                src="public/images/man-learning.jpeg"
                 alt="Person learning a language"
+                width="1024"
+                height="1024"
               />
             </div>
             <p>
@@ -232,7 +793,8 @@
           >
             <div class="form-group">
               <label for="mce-EMAIL" class="form-label"
-                >Email Address <span class="required">*</span></label
+                >Email Address
+                <span class="required" aria-required="true">*</span></label
               >
               <input
                 type="email"
