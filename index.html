@@ -3,33 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Language Learning Tool</title>
+    <title>
+      AI Language Learning Flashcards | Convert Photos to Study Materials
+    </title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="AI-powered language learning tool that instantly converts photos and transcripts into flashcards. Learn faster with real-time feedback and personalized learning materials." />
-    <meta name="keywords" content="language learning, AI flashcards, photo to flashcard, language app, learn languages, AI learning tool, transcript to flashcard" />
+    <meta
+      name="description"
+      content="AI-powered language learning tool that instantly converts photos and transcripts into flashcards. Learn faster with real-time feedback and personalized learning materials."
+    />
+    <meta
+      name="keywords"
+      content="language learning, AI flashcards, photo to flashcard, language app, learn languages, AI learning tool, transcript to flashcard"
+    />
     <meta name="author" content="Language Learning Tool" />
     <meta name="robots" content="index, follow" />
-    
+
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/" />
-    <meta property="og:title" content="Language Learning Tool - Learn Faster with AI" />
-    <meta property="og:description" content="Take a photo of your notes and instantly create learning materials. Our AI tool transforms images and audio into personalized flashcards." />
-    <meta property="og:image" content="https://yourdomain.com/images/social-share-image.jpg" />
-    
+    <meta property="og:url" content="https://lernmemo.com/" />
+    <meta
+      property="og:title"
+      content="Language Learning Tool - Learn Faster with AI"
+    />
+    <meta
+      property="og:description"
+      content="Take a photo of your notes and instantly create learning materials. Our AI tool transforms images and audio into personalized flashcards."
+    />
+    <meta
+      property="og:image"
+      content="https://lernmemo.com/public/images/social-share-image.jpg"
+    />
+
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Language Learning Tool - Learn Faster with AI" />
-    <meta name="twitter:description" content="Transform photos and transcripts into flashcards instantly with our AI-powered language learning tool." />
-    <meta name="twitter:image" content="https://yourdomain.com/images/social-share-image.jpg" />
-    
+    <meta
+      name="twitter:title"
+      content="Language Learning Tool - Learn Faster with AI"
+    />
+    <meta
+      name="twitter:description"
+      content="Transform photos and transcripts into flashcards instantly with our AI-powered language learning tool."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lernmemo.com/public/images/social-share-image.jpg"
+    />
+
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#2C3E50" />
-    
+
     <!-- Add Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -44,14 +70,34 @@
       <div class="container">
         <h1>Learn Faster, Learn Smarter</h1>
         <p>
-            Take a photo of your notes and instantly create learning materials.
+          Take a photo of your notes and instantly create learning materials.
         </p>
         <a href="#waitlist" class="btn">Join Waitlist</a>
       </div>
     </header>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+      <div class="container">
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="#" itemprop="item"><span itemprop="name">Home</span></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="#how-it-works" itemprop="item"><span itemprop="name">How it Works</span></a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="#waitlist" itemprop="item"><span itemprop="name">Waitlist</span></a>
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- How It Works Section - Add id attribute for direct linking -->
+    <section id="how-it-works" class="how-it-works">
       <div class="container">
         <h2 class="text-center">How It Works</h2>
         <div class="steps">
@@ -59,7 +105,7 @@
             <h3>Capture</h3>
             <div class="showcase-image image-1">
               <img
-                src="images/taking-photo.webp"
+                src="public/images/taking-photo.webp"
                 alt="Taking a photo of text"
               />
             </div>
@@ -68,7 +114,7 @@
           <div class="step">
             <h3>Process</h3>
             <div class="showcase-image image-2">
-              <img src="images/ai.webp" alt="AI processing language" />
+              <img src="public/images/ai.webp" alt="AI processing language" />
             </div>
             <p>Our AI instantly analyzes and extracts key learning material</p>
           </div>
@@ -76,7 +122,7 @@
             <h3>Learn</h3>
             <div class="showcase-image image-3">
               <img
-                src="images/man-learning.webp"
+                src="public/images/man-learning.webp"
                 alt="Person learning a language"
               />
             </div>
@@ -182,11 +228,12 @@
             method="post"
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
-
             target="_blank"
           >
             <div class="form-group">
-              <label for="mce-EMAIL" class="form-label">Email Address <span class="required">*</span></label>
+              <label for="mce-EMAIL" class="form-label"
+                >Email Address <span class="required">*</span></label
+              >
               <input
                 type="email"
                 name="EMAIL"
@@ -198,8 +245,16 @@
               />
             </div>
             <div id="mce-responses">
-              <div class="response" id="mce-error-response" style="display: none"></div>
-              <div class="response" id="mce-success-response" style="display: none"></div>
+              <div
+                class="response"
+                id="mce-error-response"
+                style="display: none"
+              ></div>
+              <div
+                class="response"
+                id="mce-success-response"
+                style="display: none"
+              ></div>
             </div>
             <div aria-hidden="true" style="position: absolute; left: -5000px">
               <input
@@ -210,7 +265,13 @@
               />
             </div>
             <div class="form-submit">
-              <button type="submit" class="btn btn-accent" id="mc-embedded-subscribe">Join Waitlist</button>
+              <button
+                type="submit"
+                class="btn btn-accent"
+                id="mc-embedded-subscribe"
+              >
+                Join Waitlist
+              </button>
             </div>
           </form>
         </div>
@@ -224,6 +285,18 @@
       </div>
     </footer>
   </body>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Language Learning Tool",
+      "description": "AI-powered language learning tool that converts photos and transcripts into flashcards.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Language Learning Tool"
+      }
+    }
+  </script>
   <script
     type="text/javascript"
     src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
@@ -250,14 +323,14 @@
     var $mcj = jQuery.noConflict(true);
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const waitlistButton = document.querySelector('a[href="#waitlist"]');
-      
-      waitlistButton.addEventListener('click', function(e) {
+
+      waitlistButton.addEventListener("click", function (e) {
         // Allow default behavior (scrolling to the section)
         // Then set a small timeout to ensure scrolling completes
-        setTimeout(function() {
-          const emailInput = document.getElementById('mce-EMAIL');
+        setTimeout(function () {
+          const emailInput = document.getElementById("mce-EMAIL");
           if (emailInput) {
             emailInput.focus();
           }
