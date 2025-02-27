@@ -65,6 +65,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Link to external CSS -->
     <style>
       * {
@@ -106,7 +108,7 @@
             rgba(44, 62, 80, 0.7),
             rgba(44, 62, 80, 0.7)
           ),
-          url("https://via.placeholder.com/1200x400");
+          url("public/images/taking-photo.jpeg");
 
         /* Spacing */
         --space-xs: 4px;
@@ -226,7 +228,7 @@
         border-radius: var(--border-radius-md);
         box-shadow: var(--shadow-sm);
         transition: transform var(--transition-speed) var(--transition-fn),
-          box-shadow var(--transition-speed) var(--transition-fn);
+          box-shadow var(--transition-speed) var (--transition-fn);
       }
 
       .benefit:hover {
@@ -364,44 +366,6 @@
         }
       }
 
-      /* How It Works Section */
-      .how-it-works {
-        padding: 4rem 0;
-        background-color: var(--color-white);
-      }
-
-      .how-it-works h2 {
-        margin-bottom: 3rem;
-        font-size: var(--font-size-xxl);
-        color: var(--color-heading);
-      }
-
-      .steps {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 2rem;
-      }
-
-      .step {
-        flex: 1;
-        min-width: 250px;
-        text-align: center;
-        padding: 2rem;
-        border-radius: var(--border-radius-lg);
-        box-shadow: var(--shadow-lg);
-        transition: transform var(--transition-speed) var(--transition-fn);
-      }
-
-      .step:hover {
-        transform: translateY(calc(var(--space-md) * -1));
-      }
-
-      .step h3 {
-        margin-bottom: var(--space-base);
-        color: var(--color-heading);
-      }
-
       /* Waitlist Section */
       #waitlist {
         padding: 4rem 0;
@@ -475,7 +439,7 @@
       }
 
       .btn-accent:hover {
-        background-color: var(--color-accent-dark);
+        background-color: var (--color-accent-dark);
         transform: none;
         box-shadow: var(--shadow-xl);
       }
@@ -674,6 +638,88 @@
           transform: scale(1);
         }
       }
+
+      /* Features Section Styling */
+      .features-section {
+        padding: var(--space-section) 0;
+        background-color: var(--color-background-alt);
+      }
+      
+      .features-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--space-xl);
+      }
+      
+      .feature-box {
+        flex: 1 1 300px;
+        text-align: center;
+        padding: var(--space-xl);
+        background-color: var(--color-white);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-lg);
+        transition: transform var(--transition-speed) ease, 
+                    box-shadow var(--transition-speed) ease;
+      }
+      
+      .feature-box:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-xxl);
+      }
+      
+      .feature-icon {
+        font-size: 3rem;
+        color: var(--color-secondary);
+        margin-bottom: var(--space-lg);
+        height: 80px;
+        width: 80px;
+        line-height: 80px;
+        border-radius: 50%;
+        background: var(--gradient-primary);
+        color: white;
+        margin: 0 auto var(--space-xl);
+      }
+      
+      .feature-box h3 {
+        color: var(--color-primary);
+        margin-bottom: var(--space-lg);
+        font-size: var(--font-size-lg);
+      }
+      
+      .feature-description {
+        color: var(--color-text);
+        margin-bottom: var(--space-xl);
+        line-height: 1.6;
+      }
+      
+      .feature-benefits {
+        text-align: left;
+        padding-left: 0;
+      }
+      
+      .feature-benefits li {
+        margin-bottom: var(--space-md);
+        list-style: none;
+        position: relative;
+        padding-left: 30px;
+        line-height: 1.4;
+      }
+      
+      .feature-benefits li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--color-secondary);
+        font-weight: bold;
+      }
+      
+      @media (max-width: 768px) {
+        .feature-box {
+          flex: 1 1 100%;
+          margin-bottom: var(--space-xl);
+        }
+      }
     </style>
   </head>
   <body>
@@ -682,7 +728,7 @@
       🔥 Limited Beta Access: Only 100 spots available! Sign up before the deadline. 🔥
     </div>
   
-    <!-- Breadcrumb Navigation - Moved to top of page -->
+    <!-- Breadcrumb Navigation - Updated "How it Works" to "Why" -->
     <nav class="breadcrumb-nav">
       <div class="container">
         <ol
@@ -703,8 +749,8 @@
             itemscope
             itemtype="https://schema.org/ListItem"
           >
-            <a href="#how-it-works" itemprop="item"
-              ><span itemprop="name">How it Works</span></a
+            <a href="#features-section" itemprop="item"
+              ><span itemprop="name">Why</span></a
             >
             <meta itemprop="position" content="2" />
           </li>
@@ -739,127 +785,60 @@
       </div>
     </header>
 
-    <!-- How It Works Section - Add id attribute for direct linking -->
-    <section id="how-it-works" class="how-it-works">
-      <div class="container">
-        <h2 class="text-center">How It Works</h2>
-        <div class="steps">
-          <div class="step">
-            <h3>Capture</h3>
-            <div class="showcase-image image-1">
-              <img
-                src="public/images/taking-photo.jpeg"
-                alt="Taking a photo of text"
-                width="1024"
-                height="1024"
-              />
-            </div>
-            <p>Take a photo of text or record audio in your target language</p>
-          </div>
-          <div class="step">
-            <h3>Process</h3>
-            <div class="showcase-image image-2">
-              <img
-                src="public/images/ai.jpeg"
-                width="1024"
-                height="1024"
-                alt="AI processing language"
-              />
-            </div>
-            <p>Our AI instantly analyzes and extracts key learning material</p>
-          </div>
-          <div class="step">
-            <h3>Learn</h3>
-            <div class="showcase-image image-3">
-              <img
-                src="public/images/man-learning.jpeg"
-                alt="Person learning a language"
-                width="1024"
-                height="1024"
-              />
-            </div>
-            <p>
-              Review automatically generated flashcards and get instant feedback
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Removed "How It Works" section -->
 
-    <!-- Benefits Section 1 -->
-    <section>
+    <!-- New Features/Benefits Breakdown Section -->
+    <section class="features-section">
       <div class="container">
-        <div class="benefits">
-          <div class="benefit">
-            <h2>Quick & Clear</h2>
-            <p>
-              Capture real-world words and validate your homework in seconds—no
-              more tedious note-taking or waiting for feedback.
+        <h2 class="text-center">Why Choose Our Language Learning Tool?</h2>
+        <p class="text-center">Discover how our AI-powered tool transforms the way you learn languages</p>
+        
+        <div class="features-container">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+            <h3>Snap a Pic</h3>
+            <p class="feature-description">
+              Transform any text you encounter into an instant learning opportunity
             </p>
-            <ul>
-              <li>Speed</li>
-              <li>Reduced manual work</li>
-              <li>Immediate feedback</li>
+            <ul class="feature-benefits">
+              <li>Turn real-world language into study material</li>
+              <li>No more manual note-taking – save hours of prep time</li>
+              <li>Learn vocabulary in its natural context</li>
+              <li>Study materials from authentic sources</li>
             </ul>
           </div>
-          <div class="benefit">
-            <h2>Personalized Focus</h2>
-            <p>
-              Stop juggling apps and textbooks. Our AI-powered tool lets you
-              snap photos, create flashcards, and check your work—all in one
-              place.
+          
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Get AI-Generated Flashcards</h3>
+            <p class="feature-description">
+              Our AI instantly creates personalized flashcards tailored to your learning needs
             </p>
-            <ul>
-              <li>Convenience</li>
-              <li>All-in-one solution</li>
-              <li>Streamlined learning</li>
+            <ul class="feature-benefits">
+              <li>Receive perfectly formatted study materials in seconds</li>
+              <li>Focus only on what you need to learn</li>
+              <li>Smart spaced repetition optimizes your memory retention</li>
+              <li>Grammar explanations included with each card</li>
             </ul>
           </div>
-          <div class="benefit">
-            <h2>Real-Life Learning</h2>
-            <p>
-              Turn everyday life into your language classroom—auto-generate
-              flashcards from any image or transcript, and get instant homework
-              feedback.
+          
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Ace Your Exams</h3>
+            <p class="feature-description">
+              Perfect your language skills with immediate feedback and targeted practice
             </p>
-            <ul>
-              <li>Context-based learning</li>
-              <li>Instant practice</li>
-              <li>Relevant vocabulary</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Benefits Section 2 -->
-    <section class="section-alternate">
-      <div class="container">
-        <div class="benefits">
-          <div class="benefit">
-            <h2>Efficiency Emphasis</h2>
-            <p>
-              Learn faster by instantly converting photos and transcripts into
-              flashcards—plus get real-time homework validation to keep you on
-              track.
-            </p>
-            <ul>
-              <li>Time savings</li>
-              <li>Faster progress</li>
-              <li>Consistency</li>
-            </ul>
-          </div>
-          <div class="benefit">
-            <h2>Confidence Builder</h2>
-            <p>
-              Master a new language with automated flashcards from your daily
-              encounters and quick homework corrections that boost your
-              confidence.
-            </p>
-            <ul>
-              <li>Build confidence</li>
-              <li>Skill enhancement</li>
-              <li>Real-life context</li>
+            <ul class="feature-benefits">
+              <li>Instant validation of grammar and pronunciation</li>
+              <li>Track your progress with detailed analytics</li>
+              <li>Build confidence through consistent practice</li>
+              <li>Prepare efficiently for language tests and real conversations</li>
             </ul>
           </div>
         </div>
