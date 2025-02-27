@@ -594,9 +594,94 @@
           margin-left: var(--space-sm);
         }
       }
+
+      /* New urgency banner styling */
+      .urgency-banner {
+        background-color: var(--color-accent);
+        color: var(--color-primary-dark);
+        text-align: center;
+        padding: var(--space-sm);
+        font-weight: bold;
+        position: relative;
+        z-index: 100;
+      }
+      
+      /* Countdown timer styling */
+      .countdown-container {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-md);
+        margin: var(--space-lg) 0;
+      }
+      
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--color-primary-dark);
+        color: var(--color-white);
+        padding: var(--space-md) var(--space-lg);
+        border-radius: var(--border-radius-md);
+        min-width: 80px;
+      }
+      
+      .countdown-value {
+        font-size: var(--font-size-xl);
+        font-weight: bold;
+      }
+      
+      .countdown-label {
+        font-size: var(--font-size-sm);
+        text-transform: uppercase;
+      }
+      
+      /* Spots remaining indicator */
+      .spots-indicator {
+        background-color: rgba(255,255,255,0.9);
+        border-radius: var(--border-radius-full);
+        padding: var(--space-sm) var(--space-lg);
+        display: inline-block;
+        margin: var(--space-lg) 0;
+        color: var(--color-primary-dark);
+        font-weight: bold;
+        box-shadow: var(--shadow-md);
+      }
+      
+      /* Highlight for limited spots message */
+      .limited-spots {
+        color: var(--color-accent);
+        font-weight: bold;
+        display: block;
+        margin-top: var(--space-md);
+        font-size: var(--font-size-md);
+      }
+      
+      /* Enhanced CTA button with pulse animation */
+      .btn-urgent {
+        background-color: var(--color-accent);
+        color: var(--color-primary-dark);
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- New Urgency Banner -->
+    <div class="urgency-banner">
+      🔥 Limited Beta Access: Only 100 spots available! Sign up before the deadline. 🔥
+    </div>
+  
     <!-- Breadcrumb Navigation - Moved to top of page -->
     <nav class="breadcrumb-nav">
       <div class="container">
@@ -644,7 +729,13 @@
         <p>
           Take a photo of your notes and instantly create learning materials.
         </p>
-        <a href="#waitlist" class="btn">Join Waitlist</a>
+        <span class="limited-spots">Private beta starting soon - Limited to 100 early adopters!</span>
+        <a href="#waitlist" class="btn btn-urgent">Secure Your Spot Now</a>
+        
+        <!-- Adding spots remaining indicator -->
+        <div class="spots-indicator">
+          Only <span id="spots-left">76</span> spots remaining!
+        </div>
       </div>
     </header>
 
@@ -780,9 +871,30 @@
       <div class="container text-center">
         <h2>Ready to Transform Your Learning Experience?</h2>
         <p>
-          Join our waitlist and be the first to experience the future of
-          language learning.
+          Join our exclusive beta waitlist - Limited to just 100 early adopters who will shape the future of language learning.
         </p>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+          <div class="countdown-item">
+            <span id="countdown-days" class="countdown-value">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span id="countdown-hours" class="countdown-value">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span id="countdown-minutes" class="countdown-value">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span id="countdown-seconds" class="countdown-value">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+        <p><strong>⏰ Beta registration closes when the timer hits zero! ⏰</strong></p>
+        
         <div class="card form-card">
           <form
             action="https://gmail.us22.list-manage.com/subscribe/post?u=eb5600dfff312799ed5249ed3&amp;id=2d25ef2404&amp;f_id=00cac2e1f0"
@@ -831,10 +943,10 @@
             <div class="form-submit">
               <button
                 type="submit"
-                class="btn btn-accent"
+                class="btn btn-accent btn-urgent"
                 id="mc-embedded-subscribe"
               >
-                Join Waitlist
+                Reserve My Spot Now - Don't Miss Out!
               </button>
             </div>
           </form>
@@ -896,6 +1008,70 @@
             }
           }, 500); // 500ms delay to ensure scrolling completes
         });
+      });
+
+      // Countdown Timer Script
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set the date we're counting down to - 7 days from now
+        const countdownDate = new Date();
+        countdownDate.setDate(countdownDate.getDate() + 7);
+        
+        // Update the countdown every 1 second
+        const countdownTimer = setInterval(function() {
+          // Get current date and time
+          const now = new Date().getTime();
+          
+          // Find the distance between now and the countdown date
+          const distance = countdownDate - now;
+          
+          // Time calculations for days, hours, minutes and seconds
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+          // Display the results
+          document.getElementById("countdown-days").innerText = days.toString().padStart(2, '0');
+          document.getElementById("countdown-hours").innerText = hours.toString().padStart(2, '0');
+          document.getElementById("countdown-minutes").innerText = minutes.toString().padStart(2, '0');
+          document.getElementById("countdown-seconds").innerText = seconds.toString().padStart(2, '0');
+          
+          // If the countdown is finished, display expiry message
+          if (distance < 0) {
+            clearInterval(countdownTimer);
+            document.getElementById("countdown-days").innerText = "00";
+            document.getElementById("countdown-hours").innerText = "00";
+            document.getElementById("countdown-minutes").innerText = "00";
+            document.getElementById("countdown-seconds").innerText = "00";
+            
+            // You could also update the form to show it's closed
+            const submitButton = document.getElementById("mc-embedded-subscribe");
+            if (submitButton) {
+              submitButton.innerText = "Waitlist Closed";
+              submitButton.disabled = true;
+            }
+          }
+        }, 1000);
+        
+        // Create the appearance of spots being taken in real time
+        const spotsElement = document.getElementById("spots-left");
+        if (spotsElement) {
+          // Start with the initial value set in HTML (76)
+          let spots = parseInt(spotsElement.innerText);
+          
+          // Randomly decrease spots over time to create urgency
+          setInterval(function() {
+            // 10% chance of decreasing spots each interval
+            if (Math.random() < 0.1 && spots > 5) {
+              spots--;
+              spotsElement.innerText = spots;
+              
+              if (spots <= 10) {
+                spotsElement.style.color = "red";
+              }
+            }
+          }, 10000); // Check every 10 seconds
+        }
       });
     </script>
   </body>
