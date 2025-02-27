@@ -263,109 +263,6 @@
         text-align: center;
       }
 
-      /* Make the form layout responsive */
-      .waitlist-form {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: var(--space-xl) auto;
-        gap: var(--space-sm);
-      }
-
-      /* Improved input styling for better alignment */
-      .waitlist-form input[type="email"] {
-        border: var(--border-width) solid var(--color-secondary);
-        border-radius: var(--border-radius-sm);
-        padding: var(--space-sm) var(--space-lg);
-        width: 100%;
-        max-width: 400px;
-        font-size: var(--font-size-base);
-        box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
-        outline: none;
-        transition: border-color var(--transition-speed),
-          box-shadow var(--transition-speed);
-        margin: 0;
-        height: var(--input-height);
-        box-sizing: border-box;
-      }
-
-      .waitlist-form input[type="email"]:focus {
-        border-color: var(--color-secondary-dark);
-        box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
-      }
-
-      /* Ensure button has the same height as input */
-      .waitlist-form .btn {
-        height: var(--input-height);
-        padding: var(--space-sm) var(--space-xxl);
-        margin: 0;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Make form responsive */
-      @media (max-width: 600px) {
-        .waitlist-form {
-          flex-direction: column;
-        }
-
-        .waitlist-form input[type="email"] {
-          margin-bottom: var(--space-sm);
-          max-width: 100%;
-        }
-      }
-
-      /* Image Showcase Section */
-      .showcase {
-        padding: 3rem 0;
-        background-color: var(--color-background-alt);
-      }
-
-      .showcase-images {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: var(--space-xl);
-      }
-
-      .showcase-image {
-        flex: 1;
-        min-width: 250px;
-        border-radius: var(--border-radius-lg);
-        overflow: hidden;
-        opacity: 0;
-        animation: fadeIn var(--transition-speed) forwards;
-      }
-
-      .image-1 {
-        animation-delay: 0s;
-      }
-
-      .image-2 {
-        animation-delay: 0.5s;
-      }
-
-      .image-3 {
-        animation-delay: 1s;
-      }
-
-      .showcase-image img {
-        width: 100%;
-        height: var(--image-height);
-        object-fit: cover;
-        transition: transform var(--transition-speed) var(--transition-fn);
-      }
-
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
       /* Waitlist Section */
       #waitlist {
         padding: 4rem 0;
@@ -390,12 +287,6 @@
         max-width: 600px;
         margin: 2rem auto;
         padding: 2rem;
-      }
-
-      .waitlist-form-container {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-xl);
       }
 
       .form-group {
@@ -474,29 +365,6 @@
 
       /* Responsive Styles */
       @media (max-width: 768px) {
-        .showcase-images {
-          flex-direction: column;
-        }
-
-        .showcase-image {
-          margin-bottom: 1.5rem;
-        }
-
-        .showcase-image img {
-          height: auto;
-          max-height: 300px;
-        }
-
-        .waitlist-form {
-          flex-direction: column;
-        }
-
-        .waitlist-form input,
-        .waitlist-form button {
-          width: 100%;
-          margin-bottom: var(--space-base);
-          border-radius: var(--border-radius-full);
-        }
       }
 
       /* Updated Breadcrumb navigation styles to match site theme */
@@ -517,7 +385,7 @@
 
       .breadcrumb li {
         display: inline-block;
-        margin-right: var(--space-lg);
+        margin-right: var (--space-lg);
         font-size: var(--font-size-sm);
       }
 
@@ -1052,6 +920,14 @@
           }, 10000); // Check every 10 seconds
         }
       });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNM2MSWRWZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-HNM2MSWRWZ');
     </script>
   </body>
 </html>
