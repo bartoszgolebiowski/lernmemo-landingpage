@@ -66,7 +66,10 @@
       rel="stylesheet"
     />
     <!-- Add Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <!-- Link to external CSS -->
     <style>
       * {
@@ -437,7 +440,7 @@
         position: relative;
         z-index: 100;
       }
-      
+
       /* Countdown timer styling */
       .countdown-container {
         display: flex;
@@ -445,7 +448,7 @@
         gap: var(--space-md);
         margin: var(--space-lg) 0;
       }
-      
+
       .countdown-item {
         display: flex;
         flex-direction: column;
@@ -456,20 +459,20 @@
         border-radius: var(--border-radius-md);
         min-width: 80px;
       }
-      
+
       .countdown-value {
         font-size: var(--font-size-xl);
         font-weight: bold;
       }
-      
+
       .countdown-label {
         font-size: var(--font-size-sm);
         text-transform: uppercase;
       }
-      
+
       /* Spots remaining indicator */
       .spots-indicator {
-        background-color: rgba(255,255,255,0.9);
+        background-color: rgba(255, 255, 255, 0.9);
         border-radius: var(--border-radius-full);
         padding: var(--space-sm) var(--space-lg);
         display: inline-block;
@@ -478,7 +481,7 @@
         font-weight: bold;
         box-shadow: var(--shadow-md);
       }
-      
+
       /* Highlight for limited spots message */
       .limited-spots {
         color: var(--color-accent);
@@ -487,14 +490,14 @@
         margin-top: var(--space-md);
         font-size: var(--font-size-md);
       }
-      
+
       /* Enhanced CTA button with pulse animation */
       .btn-urgent {
         background-color: var(--color-accent);
         color: var(--color-primary-dark);
         animation: pulse 2s infinite;
       }
-      
+
       @keyframes pulse {
         0% {
           transform: scale(1);
@@ -512,14 +515,14 @@
         padding: var(--space-section) 0;
         background-color: var(--color-background-alt);
       }
-      
+
       .features-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         gap: var(--space-xl);
       }
-      
+
       .feature-box {
         flex: 1 1 300px;
         text-align: center;
@@ -527,15 +530,15 @@
         background-color: var(--color-white);
         border-radius: var(--border-radius-lg);
         box-shadow: var(--shadow-lg);
-        transition: transform var(--transition-speed) ease, 
-                    box-shadow var(--transition-speed) ease;
+        transition: transform var(--transition-speed) ease,
+          box-shadow var(--transition-speed) ease;
       }
-      
+
       .feature-box:hover {
         transform: translateY(-10px);
         box-shadow: var(--shadow-xxl);
       }
-      
+
       .feature-icon {
         font-size: 3rem;
         color: var(--color-secondary);
@@ -548,24 +551,24 @@
         color: white;
         margin: 0 auto var(--space-xl);
       }
-      
+
       .feature-box h3 {
         color: var(--color-primary);
         margin-bottom: var(--space-lg);
         font-size: var(--font-size-lg);
       }
-      
+
       .feature-description {
         color: var(--color-text);
         margin-bottom: var(--space-xl);
         line-height: 1.6;
       }
-      
+
       .feature-benefits {
         text-align: left;
         padding-left: 0;
       }
-      
+
       .feature-benefits li {
         margin-bottom: var(--space-md);
         list-style: none;
@@ -573,7 +576,7 @@
         padding-left: 30px;
         line-height: 1.4;
       }
-      
+
       .feature-benefits li::before {
         content: "✓";
         position: absolute;
@@ -581,7 +584,7 @@
         color: var(--color-secondary);
         font-weight: bold;
       }
-      
+
       @media (max-width: 768px) {
         .feature-box {
           flex: 1 1 100%;
@@ -593,9 +596,10 @@
   <body>
     <!-- New Urgency Banner -->
     <div class="urgency-banner">
-      🔥 Limited Beta Access: Only 100 spots available! Sign up before the deadline. 🔥
+      🔥 Limited Beta Access: Only 100 spots available! Sign up before the
+      deadline. 🔥
     </div>
-  
+
     <!-- Breadcrumb Navigation - Updated "How it Works" to "Why" -->
     <nav class="breadcrumb-nav">
       <div class="container">
@@ -643,9 +647,11 @@
         <p>
           Take a photo of your notes and instantly create learning materials.
         </p>
-        <span class="limited-spots">Private beta starting soon - Limited to 100 early adopters!</span>
+        <span class="limited-spots"
+          >Private beta starting soon - Limited to 100 early adopters!</span
+        >
         <a href="#waitlist" class="btn btn-urgent">Secure Your Spot Now</a>
-        
+
         <!-- Adding spots remaining indicator -->
         <div class="spots-indicator">
           Only <span id="spots-left">76</span> spots remaining!
@@ -659,8 +665,11 @@
     <section class="features-section">
       <div class="container">
         <h2 class="text-center">Why Choose Our Language Learning Tool?</h2>
-        <p class="text-center">Discover how our AI-powered tool transforms the way you learn languages</p>
-        
+        <p class="text-center">
+          Discover how our AI-powered tool transforms the way you learn
+          languages
+        </p>
+
         <div class="features-container">
           <div class="feature-box">
             <div class="feature-icon">
@@ -668,7 +677,8 @@
             </div>
             <h3>Snap a Pic</h3>
             <p class="feature-description">
-              Transform any text you encounter into an instant learning opportunity
+              Transform any text you encounter into an instant learning
+              opportunity
             </p>
             <ul class="feature-benefits">
               <li>Turn real-world language into study material</li>
@@ -677,14 +687,15 @@
               <li>Study materials from authentic sources</li>
             </ul>
           </div>
-          
+
           <div class="feature-box">
             <div class="feature-icon">
               <i class="fas fa-brain"></i>
             </div>
             <h3>Get AI-Generated Flashcards</h3>
             <p class="feature-description">
-              Our AI instantly creates personalized flashcards tailored to your learning needs
+              Our AI instantly creates personalized flashcards tailored to your
+              learning needs
             </p>
             <ul class="feature-benefits">
               <li>Receive perfectly formatted study materials in seconds</li>
@@ -693,20 +704,23 @@
               <li>Grammar explanations included with each card</li>
             </ul>
           </div>
-          
+
           <div class="feature-box">
             <div class="feature-icon">
               <i class="fas fa-trophy"></i>
             </div>
             <h3>Ace Your Exams</h3>
             <p class="feature-description">
-              Perfect your language skills with immediate feedback and targeted practice
+              Perfect your language skills with immediate feedback and targeted
+              practice
             </p>
             <ul class="feature-benefits">
               <li>Instant validation of grammar and pronunciation</li>
               <li>Track your progress with detailed analytics</li>
               <li>Build confidence through consistent practice</li>
-              <li>Prepare efficiently for language tests and real conversations</li>
+              <li>
+                Prepare efficiently for language tests and real conversations
+              </li>
             </ul>
           </div>
         </div>
@@ -718,9 +732,10 @@
       <div class="container text-center">
         <h2>Ready to Transform Your Learning Experience?</h2>
         <p>
-          Join our exclusive beta waitlist - Limited to just 100 early adopters who will shape the future of language learning.
+          Join our exclusive beta waitlist - Limited to just 100 early adopters
+          who will shape the future of language learning.
         </p>
-        
+
         <!-- Countdown Timer -->
         <div class="countdown-container">
           <div class="countdown-item">
@@ -740,8 +755,12 @@
             <span class="countdown-label">Seconds</span>
           </div>
         </div>
-        <p><strong>⏰ Beta registration closes when the timer hits zero! ⏰</strong></p>
-        
+        <p>
+          <strong
+            >⏰ Beta registration closes when the timer hits zero! ⏰</strong
+          >
+        </p>
+
         <div class="card form-card">
           <form
             action="https://gmail.us22.list-manage.com/subscribe/post?u=eb5600dfff312799ed5249ed3&amp;id=2d25ef2404&amp;f_id=00cac2e1f0"
@@ -862,27 +881,39 @@
         // Set the date we're counting down to - 7 days from now
         const countdownDate = new Date();
         countdownDate.setDate(countdownDate.getDate() + 7);
-        
+
         // Update the countdown every 1 second
-        const countdownTimer = setInterval(function() {
+        const countdownTimer = setInterval(function () {
           // Get current date and time
           const now = new Date().getTime();
-          
+
           // Find the distance between now and the countdown date
           const distance = countdownDate - now;
-          
+
           // Time calculations for days, hours, minutes and seconds
           const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
           const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          
+
           // Display the results
-          document.getElementById("countdown-days").innerText = days.toString().padStart(2, '0');
-          document.getElementById("countdown-hours").innerText = hours.toString().padStart(2, '0');
-          document.getElementById("countdown-minutes").innerText = minutes.toString().padStart(2, '0');
-          document.getElementById("countdown-seconds").innerText = seconds.toString().padStart(2, '0');
-          
+          document.getElementById("countdown-days").innerText = days
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("countdown-hours").innerText = hours
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("countdown-minutes").innerText = minutes
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("countdown-seconds").innerText = seconds
+            .toString()
+            .padStart(2, "0");
+
           // If the countdown is finished, display expiry message
           if (distance < 0) {
             clearInterval(countdownTimer);
@@ -890,29 +921,31 @@
             document.getElementById("countdown-hours").innerText = "00";
             document.getElementById("countdown-minutes").innerText = "00";
             document.getElementById("countdown-seconds").innerText = "00";
-            
+
             // You could also update the form to show it's closed
-            const submitButton = document.getElementById("mc-embedded-subscribe");
+            const submitButton = document.getElementById(
+              "mc-embedded-subscribe"
+            );
             if (submitButton) {
               submitButton.innerText = "Waitlist Closed";
               submitButton.disabled = true;
             }
           }
         }, 1000);
-        
+
         // Create the appearance of spots being taken in real time
         const spotsElement = document.getElementById("spots-left");
         if (spotsElement) {
           // Start with the initial value set in HTML (76)
           let spots = parseInt(spotsElement.innerText);
-          
+
           // Randomly decrease spots over time to create urgency
-          setInterval(function() {
+          setInterval(function () {
             // 10% chance of decreasing spots each interval
             if (Math.random() < 0.1 && spots > 5) {
               spots--;
               spotsElement.innerText = spots;
-              
+
               if (spots <= 10) {
                 spotsElement.style.color = "red";
               }
@@ -921,13 +954,19 @@
         }
       });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNM2MSWRWZ"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-FK0FJPSGDR"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-HNM2MSWRWZ');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-FK0FJPSGDR");
     </script>
   </body>
 </html>
